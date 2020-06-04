@@ -5,7 +5,17 @@
 
 <body>
 
-  <p>Index page goes here</p>
+  <p>The Home Page</p>
+
+  <form action = "{{ url_for('prediction') }}" method = "post">
+    <input type = "text" name = "first" placeholder = "First Field"/>
+    <input type = "text" name = "second" placeholder = "Second Field"/>
+    <input type = "text" name = "third" placeholder = "Third Field"/>
+    <button type = "submit" >Submit</button>
+  </form>
+
+
+  <p>{{ pred_val }}</p>
 
 </body>
 </html>
