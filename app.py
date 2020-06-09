@@ -1,5 +1,11 @@
 from flask import Flask, render_template, request
 import feat_preproc
+import pickle
+import numpy as np
+
+
+# Load serialized predictor model (pickle file)
+prop_model = pickle.load(open('prop_model.pkl', 'rb'))
 
 
 # Static list of cities needed for populating the drop down menu
@@ -9,8 +15,10 @@ city_list = ['Alhambra', 'Arcadia', 'Azusa', 'Baldwin Park', 'Covina', 'Diamond 
                 'San Dimas', 'San Gabriel', 'San Marino', 'Sierra Madre', 'South El Monte',
                 'South Pasadena', 'Temple City', 'Valinda', 'Walnut', 'West Covina']
 
+# Static list of all 6 property types for populating drop down menu
 property_types = ['Single Family Residential', 'Condo/Co-op', 'Townhouse', 'Multi-Family (2-4 Unit)', 
                   'Mobile/Manufactured Home', 'Multi-Family (5+ Unit)']
+
 
 
 app = Flask(__name__)
@@ -18,28 +26,17 @@ app = Flask(__name__)
 @app.route('/')
 def home_page():
 
-
     return render_template('index.html', cities = city_list, prop_type = property_types)
 
 
 @app.route('/prediction', methods = ['POST'])
 def prediction():
-
-    # Need to take information from POST request and convert that
-    # into features that the ML model can use. Then we render 
-    # index.html with prediction results passed in as data.
-    # Should define another function called featurizer that does
-    # the processing of POST data into features. We've imported 
-    # feat_preproc, so we can call: feat_preproc.featurizer()
-
-    # return render_template('index.html', pred_output = 'Price: ${}'.format(pred_price))
-
     processed_features = feat_preproc.featurizer(request.form)
 
+    prediction = prop_model.predict(np.array(processed_features).reshape(1, -1))
+
+    return render_template('index.html', pred_vals = int(prediction), cities = city_list, prop_type = property_types)
 
 
-    # Whent this is finished, it should have
-    # prediction = model.predict(processed_features)
-    # return render_template('index.html', pred_vals = prediction, cities = city_list)
-
-    return render_template('index.html', pred_vals = processed_features, cities = city_list, prop_type = property_types)
+if __name__ == "__main__":
+    app.run()

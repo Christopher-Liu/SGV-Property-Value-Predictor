@@ -5,7 +5,7 @@
 
 <body>
 
-  <p>The Home Page</p>
+  <p>San Gabriel Valley Property Value Estimator</p>
 
   <form action = "{{ url_for('prediction') }}" method = "post">
     <input type="number" min=0 name="Sq Feet" placeholder="Sq Feet"/>
@@ -30,7 +30,7 @@
   </form>
 
 
-  <p>{{ pred_vals }}</p>
+  <p>Estimated Property Value: {{ pred_vals }}</p>
 
 </body>
 </html>
