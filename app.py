@@ -9,6 +9,9 @@ city_list = ['Alhambra', 'Arcadia', 'Azusa', 'Baldwin Park', 'Covina', 'Diamond 
                 'San Dimas', 'San Gabriel', 'San Marino', 'Sierra Madre', 'South El Monte',
                 'South Pasadena', 'Temple City', 'Valinda', 'Walnut', 'West Covina']
 
+property_types = ['Single Family Residential', 'Condo/Co-op', 'Townhouse', 'Multi-Family (2-4 Unit)', 
+                  'Mobile/Manufactured Home', 'Multi-Family (5+ Unit)']
+
 
 app = Flask(__name__)
 
@@ -16,7 +19,7 @@ app = Flask(__name__)
 def home_page():
 
 
-    return render_template('index.html', cities = city_list)
+    return render_template('index.html', cities = city_list, prop_type = property_types)
 
 
 @app.route('/prediction', methods = ['POST'])
@@ -39,4 +42,4 @@ def prediction():
     # prediction = model.predict(processed_features)
     # return render_template('index.html', pred_vals = prediction, cities = city_list)
 
-    return render_template('index.html', pred_vals = processed_features , cities = city_list)
+    return render_template('index.html', pred_vals = processed_features, cities = city_list, prop_type = property_types)

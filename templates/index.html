@@ -11,6 +11,14 @@
     <input type="number" min=0 name="Sq Feet" placeholder="Sq Feet"/>
     <input type="number" min=0 step=0.25 name="Beds" placeholder="Beds"/>
     <input type="number" min=0 step=0.25 name="Baths" placeholder="Baths"/>
+
+    <select name = "Prop_Type">
+      <option value='' disabled selected>Property Type</option>
+      {% for prop in prop_type %}
+      <option value = "{{prop}}">{{prop}}</option>
+      {% endfor %}
+    </select>
+
     <select name = "City">
       <option value='' disabled selected>City</option>
       {% for city in cities %}
