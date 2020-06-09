@@ -8,14 +8,21 @@
   <p>The Home Page</p>
 
   <form action = "{{ url_for('prediction') }}" method = "post">
-    <input type = "text" name = "first" placeholder = "First Field"/>
-    <input type = "text" name = "second" placeholder = "Second Field"/>
-    <input type = "text" name = "third" placeholder = "Third Field"/>
+    <input type="number" min=0 name="Sq Feet" placeholder="Sq Feet"/>
+    <input type="number" min=0 step=0.25 name="Beds" placeholder="Beds"/>
+    <input type="number" min=0 step=0.25 name="Baths" placeholder="Baths"/>
+    <select name = "City">
+      <option value='' disabled selected>City</option>
+      {% for city in cities %}
+      <option value = "{{city}}">{{city}}</option>
+      {% endfor %}
+    </select>
+
     <button type = "submit" >Submit</button>
   </form>
 
 
-  <p>{{ pred_val }}</p>
+  <p>{{ pred_vals }}</p>
 
 </body>
 </html>
