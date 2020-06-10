@@ -1,16 +1,14 @@
 .container {
     margin: 0 auto;
-    max-width: 800px;
     font-family: Tahoma, Geneva, sans-serif;
 }
 
 #title{
-    
+    text-align: center;  
 }
 
 .text-field-group{
-    display: flex;
-    justify-content: space-between;
+
 }
 
 .form-item{
@@ -18,12 +16,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.05em;
 }
 
 .form-item input{
     padding: 5px 5px;
     border-radius: 5px;
-    width: 75%;
+    width: 70%;
 }
 
 
@@ -47,6 +46,7 @@ button{
     border-radius: 5px;
     background-color: #d9455f;
     padding: 8px 16px;
+    margin: 3% 0;
     cursor: pointer;
     font-size: 15px;
 }
@@ -54,3 +54,23 @@ button{
 form button:hover{
     background-color: #eb944b;
 }
+
+hr{
+    margin: 10% 0 0 0;
+}
+
+
+/* Media query for larger-screens */
+@media(min-width: 768px){
+
+    .container{
+        max-width: 800px;
+    }
+
+    .text-field-group{
+        display: flex;
+        justify-content: space-between;
+    }
+  
+  }
+  

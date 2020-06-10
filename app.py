@@ -16,8 +16,8 @@ city_list = ['Alhambra', 'Arcadia', 'Azusa', 'Baldwin Park', 'Covina', 'Diamond 
                 'South Pasadena', 'Temple City', 'Valinda', 'Walnut', 'West Covina']
 
 # Static list of all 6 property types for populating drop down menu
-property_types = ['Single Family Residential', 'Condo/Co-op', 'Townhouse', 'Multi-Family (2-4 Unit)', 
-                  'Mobile/Manufactured Home', 'Multi-Family (5+ Unit)']
+property_types = ['Condo/Co-op', 'Mobile/Manufactured Home', 'Multi-Family (2-4 Unit)', 
+                  'Multi-Family (5+ Unit)', 'Single Family Residential',  'Townhouse']
 
 
 
