@@ -1,8 +1,12 @@
 .container {
     margin: 0 auto;
     max-width: 800px;
+    font-family: Tahoma, Geneva, sans-serif;
 }
 
+#title{
+    
+}
 
 .text-field-group{
     display: flex;
@@ -39,15 +43,14 @@
     flex: 3;
 }
 
-
 button{
     border-radius: 5px;
-    background-color: #1b6ca8;
+    background-color: #d9455f;
     padding: 8px 16px;
     cursor: pointer;
     font-size: 15px;
 }
 
-button:hover{
-    background-color: #5d6cd8;
+form button:hover{
+    background-color: #eb944b;
 }
