@@ -1,36 +1,61 @@
 <!doctype HTML>
 <html>
 <head>
+  <link rel="stylesheet" type='text/css' href="../static/stylesheets/style.css?v=1">
 </head>
 
 <body>
 
-  <p>San Gabriel Valley Property Value Estimator</p>
+  <div class='container'>
 
-  <form action = "{{ url_for('prediction') }}" method = "post">
-    <input type="number" min=0 name="Sq Feet" placeholder="Sq Feet"/>
-    <input type="number" min=0 step=0.25 name="Beds" placeholder="Beds"/>
-    <input type="number" min=0 step=0.25 name="Baths" placeholder="Baths"/>
+    <h1 id='title'>San Gabriel Valley Property Value Predictor</h1>
 
-    <select name = "Prop_Type">
-      <option value='' disabled selected>Property Type</option>
-      {% for prop in prop_type %}
-      <option value = "{{prop}}">{{prop}}</option>
-      {% endfor %}
-    </select>
+    <form action = "{{ url_for('prediction') }}" method = "post">
 
-    <select name = "City">
-      <option value='' disabled selected>City</option>
-      {% for city in cities %}
-      <option value = "{{city}}">{{city}}</option>
-      {% endfor %}
-    </select>
+      <div class='text-field-group'>
+        <div class='form-item'>
+          <label for='Sqfeet'>Sq Feet</label>
+          <input type="number" min=0 id='Sqfeet' name="Sq Feet"/>
+        </div>
 
-    <button type = "submit" >Submit</button>
-  </form>
+        <div class='form-item'>
+          <label for='Beds'>Beds</label>
+          <input type="number" min=0 step=0.25 id='Beds' name="Beds"/>
+        </div>
+
+        <div class='form-item'>
+          <label for='Baths'>Baths</label>
+          <input type="number" min=0 step=0.25 id='Baths' name="Baths"/>
+        </div>
+      </div>
+
+      <div class='form-item drop-down-group'>
+        <label for='Prop_Type'>Property Type</label>
+        <select name = "Prop_Type" id='Prop_Type'>
+          <option value='' disabled selected>-</option>
+          {% for prop in prop_type %}
+          <option value = "{{prop}}">{{prop}}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class='form-item drop-down-group'>
+        <label for='City'>City</label>
+        <select name = "City" id='City'>
+          <option value='' disabled selected>-</option>
+          {% for city in cities %}
+          <option value = "{{city}}">{{city}}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <button type = "submit" >Get Prediction</button>
+    </form>
 
 
-  <p>Estimated Property Value: {{ pred_vals }}</p>
+    <p>{{ pred_vals }}</p>
+
+  </div>
 
 </body>
 </html>

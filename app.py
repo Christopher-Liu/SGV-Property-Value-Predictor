@@ -35,7 +35,7 @@ def prediction():
 
     prediction = prop_model.predict(np.array(processed_features).reshape(1, -1))
 
-    return render_template('index.html', pred_vals = int(prediction), cities = city_list, prop_type = property_types)
+    return render_template('index.html', pred_vals = 'Estimated Property Value: ${}'.format(int(prediction)), cities = city_list, prop_type = property_types)
 
 
 if __name__ == "__main__":
