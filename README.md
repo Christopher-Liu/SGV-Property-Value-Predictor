@@ -1,6 +1,10 @@
 # San Gabriel Valley Property Value Predictor
 
-Machine learning model that predicts the price of a home in the San Gabriel Valley region of Los Angeles. The user can provide their desired house specifications (such as the number of beds and bathrooms) and city in the San Gabriel Valley Region, and the model returns the estimated price for that particular home. 
+## Introduction
+
+This repository houses a machine learning model that can predict the price of a home in the San Gabriel Valley region of Los Angeles. The user can provide their desired house specifications (such as the number of beds and bathrooms) and city in the San Gabriel Valley Region, and the model returns the estimated price for that particular home. 
+
+The model has been deployed through Heroku and can be be tested here: (link)[https://sgv-property-value-predictor.herokuapp.com/] 
 
 
 ## Methods Used
@@ -11,20 +15,15 @@ Machine Learning methods:
 ## Technologies
 * Python 3
 * pandas
-* Scikit-Learn
 * NumPy
+* Scikit-Learn
 * Flask
+* Heroku
 
 
 ## Project Description
 
-Description goes here
-
-
-## Table of Contents
-1. Contents
-2. Contents
-3. Contents
+Detailed description goes here
 
 
 ## Contact
