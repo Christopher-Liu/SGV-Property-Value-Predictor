@@ -1,7 +1,7 @@
 import json
 import pickle
 import numpy as np
-import feat_preproc
+from lib import feat_preproc
 from flask import Flask, render_template, request
 
 
