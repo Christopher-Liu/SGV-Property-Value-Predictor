@@ -8,11 +8,13 @@ The model has been deployed through Heroku and can be be tested here: (link)[htt
 
 
 ## Methods Used
+
 Machine Learning methods:
 * Random Forest
 
 
 ## Technologies
+
 * Python 3
 * pandas
 * NumPy
@@ -27,5 +29,6 @@ Detailed description goes here
 
 
 ## Contact
+
 If you have any questions, feel free to reach me via LinkedIn:
 https://www.linkedin.com/in/christopher-liu-aa264978

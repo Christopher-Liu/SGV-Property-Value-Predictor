@@ -1,0 +1,6 @@
+Condo/Co-op
+Mobile/Manufactured Home
+Multi-Family (2-4 Unit)
+Multi-Family (5+ Unit)
+Single Family Residential
+Townhouse
