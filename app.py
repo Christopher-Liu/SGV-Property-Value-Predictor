@@ -6,7 +6,7 @@ from flask import Flask, render_template, request
 
 
 # Load serialized predictor model (pickle file)
-prop_model = pickle.load(open('prop_model.pkl', 'rb'))
+prop_model = pickle.load(open('./models/rf_model.pkl', 'rb'))
 
 
 # Load JSON file containing socioeconomic data need for making predictions
